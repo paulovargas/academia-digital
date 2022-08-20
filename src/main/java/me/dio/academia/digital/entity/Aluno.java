@@ -1,5 +1,6 @@
 package me.dio.academia.digital.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,6 +33,7 @@ public class Aluno {
   private LocalDate dataDeNascimento;
 
   @OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY)
+  @JsonIgnore
   private List<AvaliacaoFisica> avaliacoes = new ArrayList<>();
 
 }
